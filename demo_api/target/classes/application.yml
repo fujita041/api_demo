@@ -1,0 +1,38 @@
+spring:
+    profiles.active: dev
+    application.name: approval-request
+    output.ansi.enabled: ALWAYS
+    main:
+        web-application-type: servlet
+        banner-mode: "off"
+    aop:
+        auto: true
+        proxy-target-class: true
+    http.encoding:
+        charset: UTF-8
+        enabled: true
+        force: true
+    jackson:
+      property-naming-strategy: SNAKE_CASE
+      date-format: yyyy-MM-dd HH:mm:ss
+
+server:
+    port: 8080
+    error.whitelabel.enabled: true
+    max-http-header-size: 16384
+    compression:
+        enabled: true
+        mime-types: text/html,text/plain,application/json
+    tomcat:
+        uri-encoding: UTF-8
+        max-threads: 2000
+        basedir: logs
+        accesslog:
+            enabled: true
+            buffered: false
+            directory: .
+            pattern: combined
+            prefix: tomcat-access
+    error:
+      include-exception: true
+
